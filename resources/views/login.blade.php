@@ -35,7 +35,7 @@
                         </form>
                     </div>
                     <div class="card-footer">
-                        <p>You have no account<a href="{{route('register')}}">Register</a></p>
+                        <p>You have no account <a href="{{route('register')}}">Register</a></p>
                     </div>
                 </div>
             </div>
