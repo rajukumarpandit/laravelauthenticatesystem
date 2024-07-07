@@ -32,7 +32,7 @@ class UserController extends Controller
      */
     public function userRegister(Request $request){
         $request->validate([
-            'name' => 'required|alpha',
+            'name' => 'required|string',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
         ]);
