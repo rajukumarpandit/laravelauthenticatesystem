@@ -46,6 +46,9 @@ class Kernel extends HttpKernel
         'guard'=>[
             \App\Http\Middleware\ValidUser::class,
         ],
+        'apiguard'=>[
+            \App\Http\Middleware\ApiValidKey::class,
+        ]
     ];
 
     /**

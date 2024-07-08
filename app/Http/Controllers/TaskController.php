@@ -26,10 +26,10 @@ class TaskController extends Controller
         $taskdata->task=$request->task;
         $taskdata->save();
         return response()->json([
-            'task'=>Task::find($request->user_id),
+            'task'=>$taskdata,
             'status'=>1,
             'message'=>'successfully created a task',
-        ]);
+        ], 200);
 
     }
 
@@ -54,6 +54,6 @@ class TaskController extends Controller
             'task'=>$taskdata,
             'status'=>1,
             'message'=>'marked task as ' . $request->status,
-        ]);
+        ],200);
     }
 }
