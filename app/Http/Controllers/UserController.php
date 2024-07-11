@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Task;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -24,7 +25,12 @@ class UserController extends Controller
     }
 
     protected function dashboardPage(){
-        return view('dashboard');
+        $task=Task::where('user_id',Auth::User()->id)->get();
+
+        if(count($task)>0){
+            return view('dashboard')->with('tasks',$task);
+        }
+        return view('dashboard')->with(['tasks'=>[]]);
     }
 
     /**

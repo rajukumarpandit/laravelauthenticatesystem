@@ -22,5 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-Route::post('/todo/add', [TaskController::class, 'add'])->middleware('apiguard');
-Route::post('/todo/status', [TaskController::class, 'changeStatus'])->middleware('apiguard');
+Route::post('/todo/add', [TaskController::class, 'add'])->name('todo.add')->middleware('apiguard');
+Route::post('/todo/status', [TaskController::class, 'changeStatus'])->name('todo.status')->middleware('apiguard');
