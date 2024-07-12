@@ -105,7 +105,7 @@
         <div class="modal-body">
             <form id="changestatus">
                 @csrf
-                <input type="text" name="task_id" id="taskid">
+                <input type="hidden" name="task_id" id="taskid">
                 <div class="form-group">
                     <label for="">Status</label>
                     <select name="status" class="form-select">
